@@ -1,24 +1,25 @@
-let modal = document.getElementById("modal");
-let modalImg = document.getElementById("modalImg");
-let closeBtn = document.getElementById("closeBtn");
-let images = document.querySelectorAll(".gallery img");
+let display = document.getElementById("display");
 
-// Open modal
-images.forEach(img => {
-  img.addEventListener("click", () => {
-    modal.style.display = "block";
-    modalImg.src = img.src;
-  });
-});
+// Append numbers/operators
+function append(value) {
+  display.value += value;
+}
 
-// Close modal
-closeBtn.addEventListener("click", () => {
-  modal.style.display = "none";
-});
+// Clear entire display
+function clearDisplay() {
+  display.value = "";
+}
 
-// Close when clicking outside the image
-modal.addEventListener("click", (e) => {
-  if (e.target === modal) {
-    modal.style.display = "none";
+// Delete last character
+function deleteLast() {
+  display.value = display.value.slice(0, -1);
+}
+
+// Calculate expression
+function calculate() {
+  try {
+    display.value = eval(display.value);
+  } catch {
+    display.value = "Error";
   }
-});
+}
