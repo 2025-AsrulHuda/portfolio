@@ -1,0 +1,135 @@
+/* Base styling */
+body {
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+  font-family: Arial;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  transition: 0.3s;
+}
+
+body.dark {
+  background: #111;
+  color: white;
+}
+
+/* Container */
+.container {
+  background: white;
+  width: 380px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.15);
+  transition: 0.3s;
+}
+
+body.dark .container {
+  background: #222;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#modeBtn {
+  padding: 8px 12px;
+  border: none;
+  background: #0070ff;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Input */
+.input-section {
+  display: flex;
+  margin: 20px 0;
+}
+
+.input-section input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid gray;
+}
+
+.input-section button {
+  padding: 12px 15px;
+  background: #0070ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 15px;
+}
+
+.filter-btn {
+  padding: 7px 12px;
+  border: none;
+  background: #ddd;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.filter-btn.active {
+  background: #0070ff;
+  color: white;
+}
+
+/* Task list */
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  background: #eee;
+  padding: 12px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  align-items: center;
+  animation: fadeIn 0.3s ease;
+}
+
+body.dark li {
+  background: #333;
+}
+
+li.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* Buttons inside task */
+.task-actions button {
+  margin-left: 8px;
+  padding: 5px 8px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.edit-btn { background: orange; }
+.delete-btn { background: red; }
+.done-btn { background: green; }
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
